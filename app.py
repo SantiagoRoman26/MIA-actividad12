@@ -12,13 +12,8 @@ st.set_page_config(page_title="Chatbot: Tabla de Clientes", layout="wide")
 st.title("Chatbot: Preguntas sobre la tabla de clientes")
 
 # Cargar datos (desde GitHub)
-DATA_URL = "https://raw.githubusercontent.com/eugeniomorocho/theFutureOfDataScience/main/mall_customers.csv"
-@st.cache_data
-def load_data(url=DATA_URL):
-    df = pd.read_csv(url)
-    return df
-
-df = load_data()
+# Cargar datos (desde GitHub)
+df = pd.read_csv('https://raw.githubusercontent.com/eugeniomorocho/theFutureOfDS/refs/heads/main/mall_customers.csv')
 
 st.subheader("Tabla de datos")
 st.dataframe(df)
@@ -110,4 +105,5 @@ if ask_button and user_question:
                     st.write("No se encontraron filas coincidentes por heurística.")
                 else:
                     st.dataframe(related)
+
                 st.markdown("*Nota: La búsqueda de filas relacionadas es una heurística simple y puede no ser perfecta.*")
