@@ -60,6 +60,7 @@ if ask_button and user_question:
                 "RESPONDE SÓLO con información que esté directamente en esa tabla. "
                 "Si la pregunta no se puede responder con la tabla, responde exactamente: "
                 "'Lo siento, sólo puedo responder preguntas sobre la tabla mostrada.' "
+                "Si la pregunta requiere un cálculo (como promedio, suma, máximo, mínimo, conteo) sobre una columna de la tabla, realiza el cálculo usando únicamente los datos de la tabla proporcionada."
                 "No inventes valores ni supongas datos no presentes."
             )
 
@@ -107,3 +108,4 @@ if ask_button and user_question:
                     st.dataframe(related)
 
                 st.markdown("*Nota: La búsqueda de filas relacionadas es una heurística simple y puede no ser perfecta.*")
+
